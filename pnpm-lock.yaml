@@ -172,6 +172,9 @@ importers:
       '@elizaos/plugin-abstract':
         specifier: workspace:*
         version: link:../packages/plugin-abstract
+      '@elizaos/plugin-agentkit':
+        specifier: workspace:*
+        version: link:../packages/plugin-agentkit
       '@elizaos/plugin-akash':
         specifier: workspace:*
         version: link:../packages/plugin-akash
@@ -1276,6 +1279,24 @@ importers:
       whatwg-url:
         specifier: 7.1.0
         version: 7.1.0
+
+  packages/plugin-agentkit:
+    dependencies:
+      '@coinbase/cdp-agentkit-core':
+        specifier: ^0.0.10
+        version: 0.0.10(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
+      '@coinbase/cdp-langchain':
+        specifier: ^0.0.11
+        version: 0.0.11(@coinbase/coinbase-sdk@0.13.0(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(bufferutil@4.0.9)(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))(typescript@5.7.3)(utf-8-validate@6.0.5)
+      '@elizaos/core':
+        specifier: workspace:*
+        version: link:../core
+      '@langchain/core':
+        specifier: ^0.3.27
+        version: 0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))
+      tsup:
+        specifier: 8.3.5
+        version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
 
   packages/plugin-akash:
     dependencies:
@@ -4539,8 +4560,19 @@ packages:
   '@coinbase-samples/advanced-sdk-ts@file:packages/plugin-coinbase/advanced-sdk-ts':
     resolution: {directory: packages/plugin-coinbase/advanced-sdk-ts, type: directory}
 
+  '@coinbase/cdp-agentkit-core@0.0.10':
+    resolution: {integrity: sha512-EFTaCkCd1445B4jq3LxVJaqw+r4BrwyjTAOoEabKrv9BycCPgS7fPRLuuugmnJRbSEtlG90NbsRZ7B6YkQRJ/g==}
+
+  '@coinbase/cdp-langchain@0.0.11':
+    resolution: {integrity: sha512-RqnViEuhPHa0uTWTA08R6G7JIco8s4hPiX/ChbeXC0q4h+0cGATC1bJxIW73NMJXEZfLPitM0871UZPdnDXxuw==}
+    peerDependencies:
+      '@coinbase/coinbase-sdk': ^0.13.0
+
   '@coinbase/coinbase-sdk@0.10.0':
     resolution: {integrity: sha512-sqLH7dE/0XSn5jHddjVrC1PR77sQUEytYcQAlH2d8STqRARcvddxVAByECUIL32MpbdJY7Wca3KfSa6qo811Mg==}
+
+  '@coinbase/coinbase-sdk@0.13.0':
+    resolution: {integrity: sha512-qYOcFwTANhiJvSTF2sn53Hkycj2UebOIzieNOkg42qWD606gCudCBuzV3PDrOQYVJBS/g10hyX10u5yPkIZ89w==}
 
   '@coinbase/wallet-sdk@4.2.4':
     resolution: {integrity: sha512-wJ9QOXOhRdGermKAoJSr4JgGqZm/Um0m+ecywzEC9qSOu3TXuVcG3k0XXTXW11UBgjdoPRuf5kAwRX3T9BynFA==}
@@ -25667,6 +25699,31 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@coinbase/cdp-agentkit-core@0.0.10(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)':
+    dependencies:
+      '@coinbase/coinbase-sdk': 0.13.0(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
+      twitter-api-v2: 1.19.0
+      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - typescript
+      - utf-8-validate
+
+  '@coinbase/cdp-langchain@0.0.11(@coinbase/coinbase-sdk@0.13.0(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8))(bufferutil@4.0.9)(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))(typescript@5.7.3)(utf-8-validate@6.0.5)':
+    dependencies:
+      '@coinbase/cdp-agentkit-core': 0.0.10(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)
+      '@coinbase/coinbase-sdk': 0.13.0(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
+      '@langchain/core': 0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - openai
+      - typescript
+      - utf-8-validate
+
   '@coinbase/coinbase-sdk@0.10.0(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@6.0.5)(zod@3.24.1)':
     dependencies:
       '@scure/bip32': 1.6.1
@@ -25682,6 +25739,28 @@ snapshots:
       node-jose: 2.2.0
       secp256k1: 5.0.1
       viem: 2.21.58(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@6.0.5)(zod@3.24.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@coinbase/coinbase-sdk@0.13.0(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)':
+    dependencies:
+      '@scure/bip32': 1.6.1
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
+      axios: 1.7.9(debug@4.4.0)
+      axios-mock-adapter: 1.22.0(axios@1.7.9)
+      axios-retry: 4.5.0(axios@1.7.9)
+      bip32: 4.0.0
+      bip39: 3.1.0
+      decimal.js: 10.4.3
+      dotenv: 16.4.7
+      ethers: 6.13.4(bufferutil@4.0.9)(utf-8-validate@6.0.5)
+      node-jose: 2.2.0
+      secp256k1: 5.0.1
+      viem: 2.21.58(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@6.0.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -29764,6 +29843,23 @@ snapshots:
       decamelize: 1.2.0
       js-tiktoken: 1.0.15
       langsmith: 0.2.15(openai@4.73.0(encoding@0.1.13)(zod@3.23.8))
+      mustache: 4.2.0
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      uuid: 10.0.0
+      zod: 3.23.8
+      zod-to-json-schema: 3.24.1(zod@3.23.8)
+    transitivePeerDependencies:
+      - openai
+
+  '@langchain/core@0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))':
+    dependencies:
+      '@cfworker/json-schema': 4.1.0
+      ansi-styles: 5.2.0
+      camelcase: 6.3.0
+      decamelize: 1.2.0
+      js-tiktoken: 1.0.15
+      langsmith: 0.2.15(openai@4.78.1(encoding@0.1.13)(zod@3.23.8))
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -44380,6 +44476,17 @@ snapshots:
       uuid: 10.0.0
     optionalDependencies:
       openai: 4.73.0(encoding@0.1.13)(zod@3.23.8)
+
+  langsmith@0.2.15(openai@4.78.1(encoding@0.1.13)(zod@3.23.8)):
+    dependencies:
+      '@types/uuid': 10.0.0
+      commander: 10.0.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 10.0.0
+    optionalDependencies:
+      openai: 4.78.1(encoding@0.1.13)(zod@3.23.8)
 
   langsmith@0.2.15(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)):
     dependencies:
