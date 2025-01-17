@@ -92,10 +92,17 @@ Eliza supports multiple AI models:
 - **Heurist**: Set `modelProvider: "heurist"` in your character file. Most models are uncensored.
     - LLM: Select available LLMs [here](https://docs.heurist.ai/dev-guide/supported-models#large-language-models-llms) and configure `SMALL_HEURIST_MODEL`,`MEDIUM_HEURIST_MODEL`,`LARGE_HEURIST_MODEL`
     - Image Generation: Select available Stable Diffusion or Flux models [here](https://docs.heurist.ai/dev-guide/supported-models#image-generation-models) and configure `HEURIST_IMAGE_MODEL` (default is FLUX.1-dev)
+<<<<<<< HEAD
 - **Llama**: Set `OLLAMA_MODEL` to your chosen model
 - **Grok**: Set `GROK_API_KEY` to your Grok API key and set `modelProvider: "grok"` in your character file
 - **OpenAI**: Set `OPENAI_API_KEY` to your OpenAI API key and set `modelProvider: "openai"` in your character file
 - **Livepeer**: Set `LIVEPEER_IMAGE_MODEL` to your chosen Livepeer image model, available models [here](https://livepeer-eliza.com/)
+=======
+- **Llama**: Set `XAI_MODEL=meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo`
+- **Grok**: Set `XAI_MODEL=grok-beta`
+- **OpenAI**: Set `XAI_MODEL=gpt-4o-mini` or `gpt-4o`
+- **Livepeer**: Set `SMALL_LIVEPEER_MODEL`,`MEDIUM_LIVEPEER_MODEL`,`LARGE_LIVEPEER_MODEL` and `IMAGE_LIVEPEER_MODEL` to your desired models listed [here](https://livepeer-eliza.com/).
+>>>>>>> 95f56e6b4 (Merge pull request #2 from Titan-Node/livepeer-doc-updates)
 
 You set which model to use inside the character JSON file
 
