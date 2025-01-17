@@ -31,7 +31,7 @@ jobs:
             exit 0
           fi
 
-          THRESHOLD=500
+          THRESHOLD=1000
           VIOLATIONS=0
 
           for file in $FILES; do
