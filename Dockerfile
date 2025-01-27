@@ -39,14 +39,14 @@ RUN apt-get update && \
         curl \
         ffmpeg \
         apt-transport-https \
-        gnupg \  # Added gpg
+        gnupg \
         ca-certificates && \
     mkdir -p /etc/apt/keyrings && \
     curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg && \
     echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" > /etc/apt/sources.list.d/charm.list && \
     apt-get update && \
     apt-get install -y gum && \
-    apt-get purge -y --auto-remove gnupg && \  # Remove gpg after use
+    apt-get purge -y --auto-remove gnupg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
