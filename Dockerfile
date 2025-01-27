@@ -33,12 +33,20 @@ FROM node:23.3.0-slim
 
 # Install runtime dependencies including gum and required tools
 RUN apt-get update && \
-    apt-get install -y git python3 curl ffmpeg apt-transport-https && \
+    apt-get install -y --no-install-recommends \
+        git \
+        python3 \
+        curl \
+        ffmpeg \
+        apt-transport-https \
+        gnupg \  # Added gpg
+        ca-certificates && \
     mkdir -p /etc/apt/keyrings && \
     curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | tee /etc/apt/sources.list.d/charm.list && \
+    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" > /etc/apt/sources.list.d/charm.list && \
     apt-get update && \
     apt-get install -y gum && \
+    apt-get purge -y --auto-remove gnupg && \  # Remove gpg after use
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
