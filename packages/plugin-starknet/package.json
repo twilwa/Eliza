@@ -27,7 +27,7 @@
         "@unruggable_starknet/core": "0.1.0",
         "starknet": "6.18.0",
         "tsup": "8.3.5",
-        "vitest": "2.1.5"
+        "vitest": "3.0.5"
     },
     "scripts": {
         "build": "tsup --format esm --dts",
