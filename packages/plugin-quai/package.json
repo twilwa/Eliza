@@ -8,7 +8,7 @@
         "@elizaos/core": "workspace:*",
         "quais": "1.0.0-alpha.25",
         "tsup": "^8.3.5",
-        "vitest": "^2.1.4",
+        "vitest": "^3.0.5",
         "@avnu/avnu-sdk": "^2.1.1",
         "@elizaos/plugin-trustdb": "workspace:*"
     },
