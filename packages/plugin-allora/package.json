@@ -8,7 +8,7 @@
         "@elizaos/core": "workspace:*",
         "tsup": "8.3.5",
         "node-cache": "5.1.2",
-        "vitest": "2.1.8",
+        "vitest": "3.0.5",
         "@alloralabs/allora-sdk": "0.0.4"
     },
     "scripts": {
