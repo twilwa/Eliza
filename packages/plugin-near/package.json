@@ -22,7 +22,7 @@
         "@elizaos/core": "workspace:*",
         "@ref-finance/ref-sdk": "^1.4.6",
         "tsup": "8.3.5",
-        "near-api-js": "5.0.1",
+        "near-api-js": "5.1.0",
         "bignumber.js": "9.1.2",
         "node-cache": "5.1.2"
     },
