@@ -20,8 +20,8 @@
     ],
     "dependencies": {
         "@elizaos/core": "workspace:*",
-        "@onflow/config": "1.5.1",
-        "@onflow/fcl": "1.13.1",
+        "@onflow/config": "1.5.2",
+        "@onflow/fcl": "1.16.1",
         "@onflow/typedefs": "1.4.0",
         "bignumber.js": "9.1.2",
         "bs58": "6.0.0",
