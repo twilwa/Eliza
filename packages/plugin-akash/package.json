@@ -18,9 +18,9 @@
     },
     "dependencies": {
         "@akashnetwork/akash-api": "^1.4.0",
-        "@akashnetwork/akashjs": "0.10.1",
-        "@cosmjs/proto-signing": "^0.31.3",
-        "@cosmjs/stargate": "0.31.3",
+        "@akashnetwork/akashjs": "0.11.1",
+        "@cosmjs/proto-signing": "^0.34.0",
+        "@cosmjs/stargate": "0.34.0",
         "@elizaos/core": "workspace:*",
         "@types/js-yaml": "^4.0.9",
         "axios": "^1.7.9",
