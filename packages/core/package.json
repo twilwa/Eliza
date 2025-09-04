@@ -74,7 +74,7 @@
         "@anthropic-ai/sdk": "0.30.1",
         "@fal-ai/client": "1.2.0",
         "@types/uuid": "10.0.0",
-        "ai": "3.4.33",
+        "ai": "5.0.0",
         "anthropic-vertex-ai": "1.0.2",
         "fastembed": "1.14.1",
         "fastestsmallesttextencoderdecoder": "1.0.22",
